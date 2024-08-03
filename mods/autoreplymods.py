@@ -7,7 +7,7 @@ from .. import loader, utils
 
 @loader.tds
 class ARM(loader.Module):
-    """Auto reply module"""
+    """Auto-reply module: You can customize the configuration."""
     strings = {"name": "ARM"}
 
     async def client_ready(self, client, db):
