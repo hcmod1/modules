@@ -1,4 +1,4 @@
-version = (1, 0, 0)
+__version__ = (1, 0, 0)
 
 # meta developer: @hcmod
 
@@ -56,7 +56,7 @@ class ARM(loader.Module):
     async def client_ready(self, client, db):
         self.client = client
 
-    def config(self):
+    def get_config(self):
         return loader.ModuleConfig(
             loader.ConfigValue(
                 "replies",
