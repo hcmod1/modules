@@ -105,12 +105,6 @@ class ARM(loader.Module):
                 doc=lambda: self.strings["_cfg_doc_delay"]
             ),
             loader.ConfigValue(
-                "reply_mode",
-                True,
-                doc=lambda: self.strings["_cfg_doc_reply_mode"],
-                validator=loader.validators.Boolean()
-            ),
-            loader.ConfigValue(
                 "private",
                 True,
                 doc=lambda: self.strings["_cfg_doc_private"],
@@ -120,6 +114,12 @@ class ARM(loader.Module):
                 "group",
                 False,
                 doc=lambda: self.strings["_cfg_doc_group"],
+                validator=loader.validators.Boolean()
+            ),
+            loader.ConfigValue(
+                "reply_mode",
+                True,
+                doc=lambda: self.strings["_cfg_doc_reply_mode"],
                 validator=loader.validators.Boolean()
             )
         )
