@@ -20,7 +20,6 @@ class ARM(loader.Module):
     }
 
     strings_ru = {
-        "name": "ARM",
         "reply_error": "🚫 <b>Невозможно отправить ответ</b>",
         "_cfg_doc_replies": "Словарь ответов",
         "_cfg_doc_delay": "Задержка в секундах перед ответом",
@@ -31,7 +30,6 @@ class ARM(loader.Module):
     }
 
     strings_fr = {
-        "name": "ARM",
         "reply_error": "🚫 <b>Impossible d'envoyer une réponse</b>",
         "_cfg_doc_replies": "Dictionnaire des réponses",
         "_cfg_doc_delay": "Délai en secondes avant de répondre",
@@ -42,7 +40,6 @@ class ARM(loader.Module):
     }
 
     strings_it = {
-        "name": "ARM",
         "reply_error": "🚫 <b>Impossibile inviare una risposta</b>",
         "_cfg_doc_replies": "Dizionario delle risposte",
         "_cfg_doc_delay": "Ritardo in secondi prima di rispondere",
@@ -53,7 +50,6 @@ class ARM(loader.Module):
     }
 
     strings_de = {
-        "name": "ARM",
         "reply_error": "🚫 <b>Antwort kann nicht gesendet werden</b>",
         "_cfg_doc_replies": "Wörterbuch der Antworten",
         "_cfg_doc_delay": "Verzögerung in Sekunden vor der Antwort",
@@ -64,7 +60,6 @@ class ARM(loader.Module):
     }
 
     strings_tr = {
-        "name": "ARM",
         "reply_error": "🚫 <b>Yanıt gönderilemiyor</b>",
         "_cfg_doc_replies": "Yanıtlar sözlüğü",
         "_cfg_doc_delay": "Yanıt vermeden önce saniye cinsinden gecikme",
@@ -75,7 +70,6 @@ class ARM(loader.Module):
     }
 
     strings_uz = {
-        "name": "ARM",
         "reply_error": "🚫 <b>Javob yuborib bo'lmadi</b>",
         "_cfg_doc_replies": "Javoblar lug'ati",
         "_cfg_doc_delay": "Javob berishdan oldin kechikish soniyalarda",
@@ -86,7 +80,6 @@ class ARM(loader.Module):
     }
 
     strings_es = {
-        "name": "ARM",
         "reply_error": "🚫 <b>No se pudo enviar la respuesta</b>",
         "_cfg_doc_replies": "Diccionario de respuestas",
         "_cfg_doc_delay": "Retraso en segundos antes de responder",
