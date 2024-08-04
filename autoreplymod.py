@@ -99,8 +99,8 @@ class ARM(loader.Module):
     async def client_ready(self, client, db):
         self.client = client
 
-    def init(self):
-        self.config = loader.ModuleConfig(
+    def get_config(self):
+        return loader.ModuleConfig(
             loader.ConfigValue(
                 "replies",
                 {"hello": "Hello", "привет": "Привет", "bonjour": "Bonjour", "ciao": "Ciao", "hallo": "Hallo", "merhaba": "Merhaba", "salom": "Salom", "hola": "Hola"},
