@@ -121,5 +121,7 @@ class ARM(loader.Module):
     async def cfgarm(self, message):
         """{cfgarm_cmd_doc}"""
         await message.delete()
-        await self.client.send_message(message.to_id, ".cfg ARM")
+        args = utils.get_args_raw(message)
+        config_message = f".cfg {args or 'ARM'}"
+        await self.client.send_message(message.to_id, config_message)
         await utils.answer(message, self.strings["opened_cfg"])        
