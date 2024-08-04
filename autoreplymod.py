@@ -14,6 +14,8 @@ class ARM(loader.Module):
         "_cfg_doc_replies": "Dictionary of replies",
         "_cfg_doc_delay": "Delay in seconds before replying",
         "_cfg_doc_reply_mode": "If set to true, will reply to messages; if set to false, it will not.",
+        "_cfg_doc_private": "If set to true, will work in private messages; if set to false, it will not.",
+        "_cfg_doc_group": "If set to true, will work in groups; if set to false, it will not.",
         "_cls_doc": "Auto-reply module: You can customize the configuration."
     }
 
@@ -23,6 +25,8 @@ class ARM(loader.Module):
         "_cfg_doc_replies": "Словарь ответов",
         "_cfg_doc_delay": "Задержка в секундах перед ответом",
         "_cfg_doc_reply_mode": "Если значение true, будет отвечать на сообщения, если false — не будет.",
+        "_cfg_doc_private": "Если значение true, будет работать в личных сообщениях, если false — не будет.",
+        "_cfg_doc_group": "Если значение true, будет работать в группах, если false — не будет.",
         "_cls_doc": "Модуль авто-ответчик: Вы можете настроить конфигурацию."
     }
 
@@ -31,7 +35,9 @@ class ARM(loader.Module):
         "reply_error": "🚫 <b>Impossible d'envoyer une réponse</b>",
         "_cfg_doc_replies": "Dictionnaire des réponses",
         "_cfg_doc_delay": "Délai en secondes avant de répondre",
-        "_cfg_doc_reply_mode": "Si la valeur est true, répondra aux messages ; si la valeur est false, il ne le fera pas.",
+        "_cfg_doc_reply_mode": "Si la valeur est true, répondra aux messages ; si la valeur est false, ne répondra pas.",
+        "_cfg_doc_private": "Si la valeur est true, fonctionnera dans les messages privés ; si la valeur est false, ne fonctionnera pas.",
+        "_cfg_doc_group": "Si la valeur est true, fonctionnera dans les groupes ; si la valeur est false, ne fonctionnera pas.",
         "_cls_doc": "Module de réponse automatique : Vous pouvez personnaliser la configuration."
     }
 
@@ -40,7 +46,9 @@ class ARM(loader.Module):
         "reply_error": "🚫 <b>Impossibile inviare una risposta</b>",
         "_cfg_doc_replies": "Dizionario delle risposte",
         "_cfg_doc_delay": "Ritardo in secondi prima di rispondere",
-        "_cfg_doc_reply_mode": "Se impostato su true, risponderà ai messaggi; se impostato su false, non lo farà.",
+        "_cfg_doc_reply_mode": "Se impostato su true, risponderà ai messaggi; se impostato su false, non risponderà.",
+        "_cfg_doc_private": "Se impostato su true, funzionerà nei messaggi privati; se impostato su false, non funzionerà.",
+        "_cfg_doc_group": "Se impostato su true, funzionerà nei gruppi; se impostato su false, non funzionerà.",
         "_cls_doc": "Modulo di risposta automatica: È possibile personalizzare la configurazione."
     }
 
@@ -50,6 +58,8 @@ class ARM(loader.Module):
         "_cfg_doc_replies": "Wörterbuch der Antworten",
         "_cfg_doc_delay": "Verzögerung in Sekunden vor der Antwort",
         "_cfg_doc_reply_mode": "Wenn auf true gesetzt, wird auf Nachrichten geantwortet; wenn auf false gesetzt, nicht.",
+        "_cfg_doc_private": "Wenn auf true gesetzt, funktionieren in privaten Nachrichten; wenn auf false gesetzt, nicht.",
+        "_cfg_doc_group": "Wenn auf true gesetzt, funktionieren in Gruppen; wenn auf false gesetzt, nicht.",
         "_cls_doc": "Modul zur automatischen Antwort: Sie können die Konfiguration anpassen."
     }
 
@@ -59,6 +69,8 @@ class ARM(loader.Module):
         "_cfg_doc_replies": "Yanıtlar sözlüğü",
         "_cfg_doc_delay": "Yanıt vermeden önce saniye cinsinden gecikme",
         "_cfg_doc_reply_mode": "True olarak ayarlandığında, mesajlara yanıt verir; false olarak ayarlandığında, yanıt vermez.",
+        "_cfg_doc_private": "True olarak ayarlandığında, özel mesajlarda çalışacak; false olarak ayarlandığında, çalışmayacak.",
+        "_cfg_doc_group": "True olarak ayarlandığında, gruplarda çalışacak; false olarak ayarlandığında, çalışmayacak.",
         "_cls_doc": "Otomatik yanıt modülü: Yapılandırmayı özelleştirebilirsiniz."
     }
 
@@ -68,6 +80,8 @@ class ARM(loader.Module):
         "_cfg_doc_replies": "Javoblar lug'ati",
         "_cfg_doc_delay": "Javob berishdan oldin kechikish soniyalarda",
         "_cfg_doc_reply_mode": "Agar true qilib sozlansa, xabarlarga javob beradi; agar false qilib sozlansa, javob bermaydi.",
+        "_cfg_doc_private": "Agar true qilib sozlansa, shaxsiy xabarlarda ishlaydi; agar false qilib sozlansa, ishlamaydi.",
+        "_cfg_doc_group": "Agar true qilib sozlansa, guruhlarda ishlaydi; agar false qilib sozlansa, ishlamaydi.",
         "_cls_doc": "Avto-javob moduli: Siz sozlamalarni moslashtirishingiz mumkin."
     }
 
@@ -76,18 +90,20 @@ class ARM(loader.Module):
         "reply_error": "🚫 <b>No se pudo enviar la respuesta</b>",
         "_cfg_doc_replies": "Diccionario de respuestas",
         "_cfg_doc_delay": "Retraso en segundos antes de responder",
-        "_cfg_doc_reply_mode": "Si se establece en true, responderá a los mensajes; si se establece en false, no lo hará.",
+        "_cfg_doc_reply_mode": "Si se establece en true, responderá a los mensajes; si se establece en false, no responderá.",
+        "_cfg_doc_private": "Si se establece en true, funcionará en mensajes privados; si se establece en false, no funcionará.",
+        "_cfg_doc_group": "Si se establece en true, funcionará en grupos; si se establece en false, no funcionará.",
         "_cls_doc": "Módulo de respuesta automática: Puede personalizar la configuración."
-    }
+    }        
 
     async def client_ready(self, client, db):
         self.client = client
 
-    def __init__(self):
+    def init(self):
         self.config = loader.ModuleConfig(
             loader.ConfigValue(
                 "replies",
-                {"привет": "Привет", "hello": "Hello"},
+                {"hello": "Hello", "привет": "Привет", "bonjour": "Bonjour", "ciao": "Ciao", "hallo": "Hallo", "merhaba": "Merhaba", "salom": "Salom", "hola": "Hola"},
                 doc=lambda: self.strings["_cfg_doc_replies"]
             ),
             loader.ConfigValue(
@@ -100,12 +116,24 @@ class ARM(loader.Module):
                 True,
                 doc=lambda: self.strings["_cfg_doc_reply_mode"],
                 validator=loader.validators.Boolean()
+            ),
+            loader.ConfigValue(
+                "private",
+                True,
+                doc=lambda: self.strings["_cfg_doc_private"],
+                validator=loader.validators.Boolean()
+            ),
+            loader.ConfigValue(
+                "group",
+                False,
+                doc=lambda: self.strings["_cfg_doc_group"],
+                validator=loader.validators.Boolean()
             )
         )
 
     @loader.unrestricted
     async def watcher(self, message):
-        if message.is_private:
+        if (message.is_private and self.config["private"]) or (message.is_group and self.config["group"]):
             sender = await message.get_sender()
             if sender.bot or message.sender_id == (await self.client.get_me()).id:
                 return
