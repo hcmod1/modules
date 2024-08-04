@@ -17,12 +17,30 @@ class ARM(loader.Module):
     }
 
     strings_ru = {
-        "name": "ARM",
+        "name": "АРМ",
         "reply_error": "🚫 <b>Невозможно отправить ответ</b>",
         "_cfg_doc_replies": "Словарь ответов",
         "_cfg_doc_delay": "Задержка в секундах перед ответом",
         "_cfg_doc_reply_mode": "Если true, бот отвечает на сообщение; если false, бот отправляет новое сообщение",
         "_cls_doc": "Модуль автозаполнения: Вы можете настроить конфигурацию."
+    }
+
+    strings_fr = {
+        "name": "ARM",
+        "reply_error": "🚫 <b>Impossible d'envoyer une réponse</b>",
+        "_cfg_doc_replies": "Dictionnaire des réponses",
+        "_cfg_doc_delay": "Délai en secondes avant de répondre",
+        "_cfg_doc_reply_mode": "Si vrai, le bot répond au message ; si faux, le bot envoie un nouveau message",
+        "_cls_doc": "Module de réponse automatique : Vous pouvez personnaliser la configuration."
+    }
+
+    strings_it = {
+        "name": "ARM",
+        "reply_error": "🚫 <b>Impossibile inviare una risposta</b>",
+        "_cfg_doc_replies": "Dizionario delle risposte",
+        "_cfg_doc_delay": "Ritardo in secondi prima di rispondere",
+        "_cfg_doc_reply_mode": "Se vero, il bot risponde al messaggio; se falso, il bot invia un nuovo messaggio",
+        "_cls_doc": "Modulo di risposta automatica: È possibile personalizzare la configurazione."
     }
 
     strings_de = {
@@ -50,6 +68,15 @@ class ARM(loader.Module):
         "_cfg_doc_delay": "Javob berishdan oldin kechikish soniyalarda",
         "_cfg_doc_reply_mode": "Agar true bo'lsa, bot xabariga javob beradi; agar false bo'lsa, bot yangi xabar yuboradi",
         "_cls_doc": "Avto-javob moduli: Siz sozlamalarni moslashtirishingiz mumkin."
+    }
+
+    strings_es = {
+        "name": "ARM",
+        "reply_error": "🚫 <b>No se pudo enviar la respuesta</b>",
+        "_cfg_doc_replies": "Diccionario de respuestas",
+        "_cfg_doc_delay": "Retraso en segundos antes de responder",
+        "_cfg_doc_reply_mode": "Si es verdadero, el bot responde al mensaje; si es falso, el bot envía un nuevo mensaje",
+        "_cls_doc": "Módulo de respuesta automática: Puede personalizar la configuración."
     }
 
     async def client_ready(self, client, db):
