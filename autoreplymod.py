@@ -27,7 +27,7 @@ class ARM(loader.Module):
         "_cfg_doc_reply_mode": "Если значение true, будет отвечать на сообщения, если false — не будет.",
         "_cfg_doc_private": "Если значение true, будет работать в личных сообщениях, если false — не будет.",
         "_cfg_doc_group": "Если значение true, будет работать в группах, если false — не будет.",
-        "_cls_doc": "Модуль авто-ответчик: Вы можете настроить конфигурацию."
+        "_cls_doc": "ъМодуль авто-ответчик: Вы можете настроить конфигурацию."
     }
 
     strings_fr = {
@@ -94,13 +94,13 @@ class ARM(loader.Module):
         "_cfg_doc_private": "Si se establece en true, funcionará en mensajes privados; si se establece en false, no funcionará.",
         "_cfg_doc_group": "Si se establece en true, funcionará en grupos; si se establece en false, no funcionará.",
         "_cls_doc": "Módulo de respuesta automática: Puede personalizar la configuración."
-    }        
+    }
 
     async def client_ready(self, client, db):
         self.client = client
 
-    def get_config(self):
-        return loader.ModuleConfig(
+    def __init__(self):
+        self.config = loader.ModuleConfig(
             loader.ConfigValue(
                 "replies",
                 {"hello": "Hello", "привет": "Привет", "bonjour": "Bonjour", "ciao": "Ciao", "hallo": "Hallo", "merhaba": "Merhaba", "salom": "Salom", "hola": "Hola"},
@@ -149,4 +149,4 @@ class ARM(loader.Module):
                             await message.respond(reply)
                     except:
                         await message.reply(self.strings["reply_error"])
-                    break
+                    break        
