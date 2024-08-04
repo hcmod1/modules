@@ -13,7 +13,8 @@ class ARM(loader.Module):
         "reply_error": "🚫 <b>Unable to send reply</b>",
         "_cfg_doc_replies": "Dictionary of replies",
         "_cfg_doc_delay": "Delay in seconds before replying",
-        "_cfg_doc_reply_mode": "If true, bot replies to the message; if false, bot sends a new message"
+        "_cfg_doc_reply_mode": "If set to true, will reply to messages; if set to false, it will not.",
+        "_cls_doc": "Auto-reply module: You can customize the configuration."
     }
 
     strings_ru = {
@@ -21,7 +22,7 @@ class ARM(loader.Module):
         "reply_error": "🚫 <b>Невозможно отправить ответ</b>",
         "_cfg_doc_replies": "Словарь ответов",
         "_cfg_doc_delay": "Задержка в секундах перед ответом",
-        "_cfg_doc_reply_mode": "Если true, бот отвечает на сообщение; если false, бот отправляет новое сообщение",
+        "_cfg_doc_reply_mode": "Если значение true, будет отвечать на сообщения, если false — не будет.",
         "_cls_doc": "Модуль авто-ответчик: Вы можете настроить конфигурацию."
     }
 
@@ -30,7 +31,7 @@ class ARM(loader.Module):
         "reply_error": "🚫 <b>Impossible d'envoyer une réponse</b>",
         "_cfg_doc_replies": "Dictionnaire des réponses",
         "_cfg_doc_delay": "Délai en secondes avant de répondre",
-        "_cfg_doc_reply_mode": "Si vrai, le bot répond au message ; si faux, le bot envoie un nouveau message",
+        "_cfg_doc_reply_mode": "Si la valeur est true, répondra aux messages ; si la valeur est false, il ne le fera pas.",
         "_cls_doc": "Module de réponse automatique : Vous pouvez personnaliser la configuration."
     }
 
@@ -39,7 +40,7 @@ class ARM(loader.Module):
         "reply_error": "🚫 <b>Impossibile inviare una risposta</b>",
         "_cfg_doc_replies": "Dizionario delle risposte",
         "_cfg_doc_delay": "Ritardo in secondi prima di rispondere",
-        "_cfg_doc_reply_mode": "Se vero, il bot risponde al messaggio; se falso, il bot invia un nuovo messaggio",
+        "_cfg_doc_reply_mode": "Se impostato su true, risponderà ai messaggi; se impostato su false, non lo farà.",
         "_cls_doc": "Modulo di risposta automatica: È possibile personalizzare la configurazione."
     }
 
@@ -48,7 +49,7 @@ class ARM(loader.Module):
         "reply_error": "🚫 <b>Antwort kann nicht gesendet werden</b>",
         "_cfg_doc_replies": "Wörterbuch der Antworten",
         "_cfg_doc_delay": "Verzögerung in Sekunden vor der Antwort",
-        "_cfg_doc_reply_mode": "Wenn true, antwortet der Bot auf die Nachricht; wenn false, sendet der Bot eine neue Nachricht",
+        "_cfg_doc_reply_mode": "Wenn auf true gesetzt, wird auf Nachrichten geantwortet; wenn auf false gesetzt, nicht.",
         "_cls_doc": "Modul zur automatischen Antwort: Sie können die Konfiguration anpassen."
     }
 
@@ -57,7 +58,7 @@ class ARM(loader.Module):
         "reply_error": "🚫 <b>Yanıt gönderilemiyor</b>",
         "_cfg_doc_replies": "Yanıtlar sözlüğü",
         "_cfg_doc_delay": "Yanıt vermeden önce saniye cinsinden gecikme",
-        "_cfg_doc_reply_mode": "Eğer true ise, bot mesaja yanıt verir; false ise, bot yeni bir mesaj gönderir",
+        "_cfg_doc_reply_mode": "True olarak ayarlandığında, mesajlara yanıt verir; false olarak ayarlandığında, yanıt vermez.",
         "_cls_doc": "Otomatik yanıt modülü: Yapılandırmayı özelleştirebilirsiniz."
     }
 
@@ -66,7 +67,7 @@ class ARM(loader.Module):
         "reply_error": "🚫 <b>Javob yuborib bo'lmadi</b>",
         "_cfg_doc_replies": "Javoblar lug'ati",
         "_cfg_doc_delay": "Javob berishdan oldin kechikish soniyalarda",
-        "_cfg_doc_reply_mode": "Agar true bo'lsa, bot xabariga javob beradi; agar false bo'lsa, bot yangi xabar yuboradi",
+        "_cfg_doc_reply_mode": "Agar true qilib sozlansa, xabarlarga javob beradi; agar false qilib sozlansa, javob bermaydi.",
         "_cls_doc": "Avto-javob moduli: Siz sozlamalarni moslashtirishingiz mumkin."
     }
 
@@ -75,7 +76,7 @@ class ARM(loader.Module):
         "reply_error": "🚫 <b>No se pudo enviar la respuesta</b>",
         "_cfg_doc_replies": "Diccionario de respuestas",
         "_cfg_doc_delay": "Retraso en segundos antes de responder",
-        "_cfg_doc_reply_mode": "Si es verdadero, el bot responde al mensaje; si es falso, el bot envía un nuevo mensaje",
+        "_cfg_doc_reply_mode": "Si se establece en true, responderá a los mensajes; si se establece en false, no lo hará.",
         "_cls_doc": "Módulo de respuesta automática: Puede personalizar la configuración."
     }
 
