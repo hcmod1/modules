@@ -143,4 +143,3 @@ class AutoReplyMod(loader.Module):
                             await message.reply(reply)
                         else:
                             await message.respond(reply)
-                    break
