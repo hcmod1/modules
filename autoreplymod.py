@@ -11,10 +11,10 @@ import asyncio
 from .. import loader, utils
 
 @loader.tds
-class AutoReply(loader.Module):
+class AutoReplyMod(loader.Module):
     """Auto-reply module: You can customize the configuration."""
     strings = {
-        "name": "AutoReply",
+        "name": "AutoReplyMod",
         "_cfg_doc_replies": "Dictionary of replies",
         "_cfg_doc_delay": "Delay in seconds before replying",
         "_cfg_doc_reply_mode": "If set to true, will reply to messages; if set to false, it will not.",
