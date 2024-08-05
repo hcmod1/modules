@@ -99,7 +99,8 @@ class AutoReplyMod(loader.Module):
             loader.ConfigValue(
                 "delay",
                 0,
-                doc=lambda: self.strings["_cfg_doc_delay"]
+                doc=lambda: self.strings["_cfg_doc_delay"],
+                validator=loader.validators.Integer(minimum=0)
             ),
             loader.ConfigValue(
                 "private",
