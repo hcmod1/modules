@@ -1,17 +1,13 @@
 __version__ = (1, 0, 0)
 
-# © https://t.me/hcmod
+# © t.me/hcmod
 
-# 💾 Code is licensed under CC-BY-NC-ND 4.0 unless otherwise specified.
-# 🔒 https://creativecommons.org/licenses/by-nc-nd/4.0/
-# + attribution
-# + non-commercial
-# + no-derivatives
-
-# You CANNOT edit this file without direct permission from the author.
-# You can redistribute this file without any changes.
+# 💾 Licensed under the GNU AGPLv3
+# 🔒 https://www.gnu.org/licenses/agpl-3.0.html
 
 # meta developer: @hcmod
+# scope: hikka_only
+# scope: hikka_min 1.2.10
 
 import asyncio
 from .. import loader, utils
