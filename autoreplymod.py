@@ -138,8 +138,8 @@ class AutoReplyMod(loader.Module):
             for keyword, reply in self.config["replies"].items():
                 if keyword in text:
                     await asyncio.sleep(self.config["delay"])
-                    try:
-                        if self.config["reply_mode"]:
-                            await message.reply(reply)
-                        else:
-                            await message.respond(reply)
+                    if self.config["reply_mode"]:
+                        await message.reply(reply)
+                    else:
+                        await message.respond(reply)
+                    break
