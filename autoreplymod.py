@@ -1,6 +1,7 @@
 __version__ = (1, 0, 0)
 
 # © https://t.me/hcmod
+
 # 💾 Code is licensed under CC-BY-NC-ND 4.0 unless otherwise specified.
 # 🔒 https://creativecommons.org/licenses/by-nc-nd/4.0/
 # + attribution
@@ -20,7 +21,6 @@ class AutoReplyMod(loader.Module):
     """Auto-reply module: You can customize the configuration."""
     strings = {
         "name": "AutoReplyMod",
-        "reply_error": "🚫 <b>Unable to send reply</b>",
         "_cfg_doc_replies": "Dictionary of replies",
         "_cfg_doc_delay": "Delay in seconds before replying",
         "_cfg_doc_reply_mode": "If set to true, will reply to messages; if set to false, it will not.",
@@ -30,7 +30,6 @@ class AutoReplyMod(loader.Module):
     }
 
     strings_ru = {
-        "reply_error": "🚫 <b>Невозможно отправить ответ</b>",
         "_cfg_doc_replies": "Словарь ответов",
         "_cfg_doc_delay": "Задержка в секундах перед ответом",
         "_cfg_doc_reply_mode": "Если значение true, будет отвечать на сообщения, если false — не будет.",
@@ -40,7 +39,6 @@ class AutoReplyMod(loader.Module):
     }
 
     strings_fr = {
-        "reply_error": "🚫 <b>Impossible d'envoyer une réponse</b>",
         "_cfg_doc_replies": "Dictionnaire des réponses",
         "_cfg_doc_delay": "Délai en secondes avant de répondre",
         "_cfg_doc_reply_mode": "Si la valeur est true, répondra aux messages ; si la valeur est false, ne répondra pas.",
@@ -50,7 +48,6 @@ class AutoReplyMod(loader.Module):
     }
 
     strings_it = {
-        "reply_error": "🚫 <b>Impossibile inviare una risposta</b>",
         "_cfg_doc_replies": "Dizionario delle risposte",
         "_cfg_doc_delay": "Ritardo in secondi prima di rispondere",
         "_cfg_doc_reply_mode": "Se impostato su true, risponderà ai messaggi; se impostato su false, non risponderà.",
@@ -60,7 +57,6 @@ class AutoReplyMod(loader.Module):
     }
 
     strings_de = {
-        "reply_error": "🚫 <b>Antwort kann nicht gesendet werden</b>",
         "_cfg_doc_replies": "Wörterbuch der Antworten",
         "_cfg_doc_delay": "Verzögerung in Sekunden vor der Antwort",
         "_cfg_doc_reply_mode": "Wenn auf true gesetzt, wird auf Nachrichten geantwortet; wenn auf false gesetzt, nicht.",
@@ -70,7 +66,6 @@ class AutoReplyMod(loader.Module):
     }
 
     strings_tr = {
-        "reply_error": "🚫 <b>Yanıt gönderilemiyor</b>",
         "_cfg_doc_replies": "Yanıtlar sözlüğü",
         "_cfg_doc_delay": "Yanıt vermeden önce saniye cinsinden gecikme",
         "_cfg_doc_reply_mode": "True olarak ayarlandığında, mesajlara yanıt verir; false olarak ayarlandığında, yanıt vermez.",
@@ -80,7 +75,6 @@ class AutoReplyMod(loader.Module):
     }
 
     strings_uz = {
-        "reply_error": "🚫 <b>Javob yuborib bo'lmadi</b>",
         "_cfg_doc_replies": "Javoblar lug'ati",
         "_cfg_doc_delay": "Javob berishdan oldin kechikish soniyalarda",
         "_cfg_doc_reply_mode": "Agar true qilib sozlansa, xabarlarga javob beradi; agar false qilib sozlansa, javob bermaydi.",
@@ -90,7 +84,6 @@ class AutoReplyMod(loader.Module):
     }
 
     strings_es = {
-        "reply_error": "🚫 <b>No se pudo enviar la respuesta</b>",
         "_cfg_doc_replies": "Diccionario de respuestas",
         "_cfg_doc_delay": "Retraso en segundos antes de responder",
         "_cfg_doc_reply_mode": "Si se establece en true, responderá a los mensajes; si se establece en false, no responderá.",
@@ -150,6 +143,4 @@ class AutoReplyMod(loader.Module):
                             await message.reply(reply)
                         else:
                             await message.respond(reply)
-                    except:
-                        await message.reply(self.strings["reply_error"])
                     break
