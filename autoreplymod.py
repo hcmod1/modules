@@ -1,5 +1,6 @@
 __version__ = (1, 0, 0)
 
+# © https://t.me/hcmod
 # 💾 Code is licensed under CC-BY-NC-ND 4.0 unless otherwise specified.
 # 🔒 https://creativecommons.org/licenses/by-nc-nd/4.0/
 # + attribution
@@ -151,4 +152,4 @@ class AutoReplyMod(loader.Module):
                             await message.respond(reply)
                     except:
                         await message.reply(self.strings["reply_error"])
-                    break        
+                    break
