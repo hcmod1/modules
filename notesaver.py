@@ -17,6 +17,7 @@ class NoteSaver(loader.Module):
     """A module to save and manage your notes efficiently."""
 
     strings = {
+        "name": "NoteSaver",
         "note_saved": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Note saved!</b>",
         "no_notes": "<emoji document_id=5210952531676504517>❌</emoji> <b>No notes found.</b>",
         "notes_list": "<emoji document_id=5413879192267805083>🗓</emoji> <b>Saved notes:</b>\n\n{}",
