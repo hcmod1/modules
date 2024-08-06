@@ -86,6 +86,24 @@ class AutoReplyMod(loader.Module):
         "_cls_doc": "Módulo de respuesta automática: Puede personalizar la configuración."
     }
 
+    strings_kk = {
+        "_cfg_doc_replies": "Жауаптар сөздігі",
+        "_cfg_doc_delay": "Жауап беру алдында секундтардағы кідіріс",
+        "_cfg_doc_reply_mode": "Егер мәні true болса, хабарламаларға жауап береді, егер false болса — жауап бермейді.",
+        "_cfg_doc_private": "Егер мәні true болса, жеке хабарламаларда жұмыс істейді, егер false болса — жұмыс істемейді.",
+        "_cfg_doc_group": "Егер мәні true болса, топтарда жұмыс істейді, егер false болса — жұмыс істемейді.",
+        "_cls_doc": "Авто-жауап модулі: Сіз конфигурацияны баптай аласыз."
+    }
+
+    strings_tt = {
+        "_cfg_doc_replies": "Җаваплар сүзлеге",
+        "_cfg_doc_delay": "Җавап бирү алдыннан секундларда тоткарлык",
+        "_cfg_doc_reply_mode": "Әгәр дә кыйммәт true булса, хәбәрләргә җавап бирәчәк, әгәр false булса — җавап бирмәячәк.",
+        "_cfg_doc_private": "Әгәр дә кыйммәт true булса, шәхси хәбәрләрдә эшләячәк, әгәр false булса — эшләмәячәк.",
+        "_cfg_doc_group": "Әгәр дә кыйммәт true булса, төркемнәрдә эшләячәк, әгәр false булса — эшләмәячәк.",
+        "_cls_doc": "Авто-җавап модуле: Сез конфигурацияне көйли аласыз."
+    }
+
     async def client_ready(self, client, db):
         self.client = client
 
