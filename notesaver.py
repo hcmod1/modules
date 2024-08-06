@@ -191,7 +191,7 @@ class NoteSaver(loader.Module):
         self.config = loader.ModuleConfig(
             loader.ConfigValue(
                 "timer",
-                5,
+                10,
                 doc=lambda: self.strings["_cfg_doc_timer"],
                 validator=loader.validators.Integer(minimum=0)
             )
