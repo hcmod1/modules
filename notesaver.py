@@ -171,7 +171,7 @@ class NoteSaver(loader.Module):
         await utils.answer(message, self.strings["notes_list"].format(notes))
 
     @loader.command()
-    async def ndel(self, message: Message):
+    async def ndelete(self, message: Message):
         """- delete a note. Usage: ndelete <note number>"""
         args = utils.get_args_raw(message)
         if not args.isdigit():
