@@ -146,7 +146,7 @@ class NoteSaver(loader.Module):
 
     @loader.command()
     async def sn(self, message: Message):
-        """- save a note. Usage: .savenote <reply to a message>"""
+        """- save a note. Usage: sn <reply to a message>"""
         reply = await message.get_reply_message()
         if not reply:
             await utils.answer(message, self.strings["please_reply"])
@@ -172,7 +172,7 @@ class NoteSaver(loader.Module):
 
     @loader.command()
     async def dn(self, message: Message):
-        """- delete a note. Usage: .delnote <note number>"""
+        """- delete a note. Usage: dn <note number>"""
         args = utils.get_args_raw(message)
         if not args.isdigit():
             await utils.answer(message, self.strings["spec_invalid_number"])
