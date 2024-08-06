@@ -15,18 +15,6 @@ from .. import loader, utils
 @loader.tds
 class NoteSaver(loader.Module):
     """A module to save and manage your notes efficiently."""
-    strings = {
-        "name": "NoteSaver",
-        "note_saved": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Note saved!</b>",
-        "no_notes": "<emoji document_id=5210952531676504517>❌</emoji> <b>No notes found.</b>",
-        "notes_list": "<emoji document_id=5413879192267805083>🗓</emoji> <b>Saved Notes:</b>\n\n{}",
-        "note_deleted": "<emoji document_id=5445267414562389170>🗑</emoji> <b>Note deleted!</b>",
-        "spec_invalid_number": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Please specify the note number to delete.</b>",
-        "invalid_note_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Invalid note number.</b>",
-        "cleared_all_notes": "<emoji document_id=5206607081334906820>✔️</emoji> <b>All notes cleared!</b>",
-        "please_reply": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Please reply to a message to save it as a note.</b>",
-        "_cfg_doc_timer": "The time in seconds after which the message will be deleted."
-    }
 
     strings_ru = {
         "note_saved": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Заметка сохранена!</b>",
@@ -147,6 +135,40 @@ class NoteSaver(loader.Module):
         "_cls_doc": "Un módulo para guardar y gestionar tus notas de manera eficiente."
     }
 
+    strings_kk = {
+        "note_saved": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Ескертпе сақталды!</b>",
+        "no_notes": "<emoji document_id=5210952531676504517>❌</emoji> <b>Ескертпелер табылмады.</b>",
+        "notes_list": "<emoji document_id=5413879192267805083>🗓</emoji> <b>Сақталған ескертпелер:</b>\n\n{}",
+        "note_deleted": "<emoji document_id=5445267414562389170>🗑</emoji> <b>Ескертпе жойылды!</b>",
+        "spec_invalid_number": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Жою үшін ескертпе нөмірін көрсетіңіз.</b>",
+        "invalid_note_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Қате ескертпе нөмірі.</b>",
+        "cleared_all_notes": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Барлық ескертпелер тазартылды!</b>",
+        "please_reply": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Ескертпе ретінде сақтау үшін хабарламаға жауап беріңіз.</b>",
+        "_cmd_doc_nsave": "- ескертпені сақтау. Қолдану: nsave <хабарламаға жауап>",
+        "_cmd_doc_nlist": "- барлық сақталған ескертпелерді атау",
+        "_cmd_doc_ndelete": "- ескертпені жою. Қолдану: ndelete <ескертпе нөмірі>",
+        "_cmd_doc_nclear": "- барлық сақталған ескертпелерді тазарту",
+        "_cfg_doc_timer": "Хабарлама жойылатын уақыт секундта.",
+        "_cls_doc": "Сіздің ескертпелеріңізді сақтап, басқаруға арналған модуль."
+    }
+
+    strings_tt = {
+        "note_saved": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Искәрмә сакланды!</b>",
+        "no_notes": "<emoji document_id=5210952531676504517>❌</emoji> <b>Искәрмәләр табылмады.</b>",
+        "notes_list": "<emoji document_id=5413879192267805083>🗓</emoji> <b>Сакланган искәрмәләр:</b>\n\n{}",
+        "note_deleted": "<emoji document_id=5445267414562389170>🗑</emoji> <b>Искәрмә бетерелде!</b>",
+        "spec_invalid_number": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Бетерү өчен искәрмә номерын күрсәтегез.</b>",
+        "invalid_note_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Ялгыш искәрмә номеры.</b>",
+        "cleared_all_notes": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Барлык искәрмәләр чистартылды!</b>",
+        "please_reply": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Искәрмә итеп саклау өчен хәбәргә җавап бирегез.</b>",
+        "_cmd_doc_nsave": "- искәрмәне саклау. Куллану: nsave <хәбәргә җавап>",
+        "_cmd_doc_nlist": "- барлык сакланган искәрмәләрне ату",
+        "_cmd_doc_ndelete": "- искәрмәне бетерү. Куллану: ndelete <искәрмә номеры>",
+        "_cmd_doc_nclear": "- барлык искәрмәләрне чистарту",
+        "_cfg_doc_timer": "Хәбәр бетерелгәннән соң вакыт секундларда.",
+        "_cls_doc": "Искәрмәләрегезне саклау һәм идарә итү өчен модуль."
+    }
+
     async def client_ready(self, client, db):
         self.client = client
         self.db = db
@@ -217,3 +239,4 @@ class NoteSaver(loader.Module):
         await utils.answer(message, self.strings["cleared_all_notes"])
         await asyncio.sleep(self.config["timer"])
         await message.delete()
+        
