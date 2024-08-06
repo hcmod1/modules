@@ -24,7 +24,8 @@ class NoteSaver(loader.Module):
         "spec_invalid_number": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Please specify the note number to delete.</b>",
         "invalid_note_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Invalid note number.</b>",
         "cleared_all_notes": "<emoji document_id=5206607081334906820>✔️</emoji> <b>All notes cleared!</b>",
-        "please_reply": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Please reply to a message to save it as a note.</b>"
+        "please_reply": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Please reply to a message to save it as a note.</b>",
+        "_cfg_doc_timer": "The time in seconds after which the message will be deleted."
     }
 
     strings_ru = {
@@ -40,6 +41,7 @@ class NoteSaver(loader.Module):
         "_cmd_doc_nlist": "- перечислить все сохраненные заметки",
         "_cmd_doc_ndelete": "- удалить заметку. Использование: ndelete <номер заметки>",
         "_cmd_doc_nclear": "- очистить все сохраненные заметки",
+        "_cfg_doc_timer": "Время в секундах, по истечении которого сообщение будет удалено.",
         "_cls_doc": "Модуль для сохранения и управления вашими заметками."
     }
 
@@ -56,6 +58,7 @@ class NoteSaver(loader.Module):
         "_cmd_doc_nlist": "- lister toutes les notes enregistrées",
         "_cmd_doc_ndelete": "- supprimer une note. Utilisation: ndelete <numéro de note>",
         "_cmd_doc_nclear": "- effacer toutes les notes enregistrées",
+        "_cfg_doc_timer": "Le délai en secondes après lequel le message sera supprimé.",
         "_cls_doc": "Un module pour enregistrer et gérer vos notes efficacement."
     }
 
@@ -72,6 +75,7 @@ class NoteSaver(loader.Module):
         "_cmd_doc_nlist": "- elenca tutte le note salvate",
         "_cmd_doc_ndelete": "- elimina una nota. Uso: ndelete <numero di nota>",
         "_cmd_doc_nclear": "- cancella tutte le note salvate",
+        "_cfg_doc_timer": "Il tempo in secondi dopo il quale il messaggio sarà eliminato.",
         "_cls_doc": "Un modulo per salvare e gestire le tue note in modo efficiente."
     }
 
@@ -88,6 +92,7 @@ class NoteSaver(loader.Module):
         "_cmd_doc_nlist": "- alle gespeicherten Notizen auflisten",
         "_cmd_doc_ndelete": "- lösche eine Notiz. Verwendung: ndelete <Notiznummer>",
         "_cmd_doc_nclear": "- alle gespeicherten Notizen löschen",
+        "_cfg_doc_timer": "Die Zeit in Sekunden, nach der die Nachricht gelöscht wird.",
         "_cls_doc": "Ein Modul, um Notizen effizient zu speichern und zu verwalten."
     }
 
@@ -104,6 +109,7 @@ class NoteSaver(loader.Module):
         "_cmd_doc_nlist": "- kaydedilen tüm notları listele",
         "_cmd_doc_ndelete": "- bir notu sil. Kullanım: ndelete <not numarası>",
         "_cmd_doc_nclear": "- tüm kaydedilen notları temizle",
+        "_cfg_doc_timer": "Mesajın silineceği süre saniye cinsinden.",
         "_cls_doc": "Notlarınızı verimli bir şekilde kaydetmek ve yönetmek için bir modül."
     }
     
@@ -120,6 +126,7 @@ class NoteSaver(loader.Module):
         "_cmd_doc_nlist": "- saqlangan eslatmalar ro'yxati",
         "_cmd_doc_ndelete": "- elslatmani o'chirib tashlash. Foydalanish: ndelete <eslatma raqami>",
         "_cmd_doc_nclear": "- barcha saqlangan eslatmalarni tozalash",
+        "_cfg_doc_timer": "Xabar o‘chiriladigan vaqt (soniyalarda).",
         "_cls_doc": "Eslatmalarni samarali saqlash va boshqarish uchun modul."
     }
 
@@ -136,6 +143,7 @@ class NoteSaver(loader.Module):
         "_cmd_doc_nlist": "- mostrar todas las notas guardadas",
         "_cmd_doc_ndelete": "- eliminar una nota. Uso: ndelete <número de nota>",
         "_cmd_doc_nclear": "- limpiar todas las notas guardadas",
+        "_cfg_doc_timer": "El tiempo en segundos después del cual el mensaje será eliminado.",
         "_cls_doc": "Un módulo para guardar y gestionar tus notas de manera eficiente."
     }
 
@@ -144,19 +152,29 @@ class NoteSaver(loader.Module):
         self.db = db
         self.notes = self.db.get(self.strings["name"], "notes", [])
 
+    def __init__(self):
+        self.config = loader.ModuleConfig(
+            loader.ConfigValue(
+                "timer",
+                5,
+                doc=lambda: self.strings["_cfg_doc_timer"],
+                validator=loader.validators.Integer(minimum=0)
+            )
+        )
+
     @loader.command()
     async def nsave(self, message: Message):
         """- save a note. Usage: nsave <reply to a message>"""
         reply = await message.get_reply_message()
         if not reply:
             await utils.answer(message, self.strings["please_reply"])
-            await asyncio.sleep(5)
+            await asyncio.sleep(self.config["timer"])
             await message.delete()
             return
         self.notes.append(reply.text)
         self.db.set(self.strings["name"], "notes", self.notes)
         await utils.answer(message, self.strings["note_saved"])
-        await asyncio.sleep(5)
+        await asyncio.sleep(self.config["timer"])
         await message.delete()
 
     @loader.command()
@@ -164,7 +182,7 @@ class NoteSaver(loader.Module):
         """- list all saved notes"""
         if not self.notes:
             await utils.answer(message, self.strings["no_notes"])
-            await asyncio.sleep(5)
+            await asyncio.sleep(self.config["timer"])
             await message.delete()
             return
         notes = "\n\n".join([f"<b>{i+1}.</b> {n}" for i, n in enumerate(self.notes)])
@@ -176,7 +194,7 @@ class NoteSaver(loader.Module):
         args = utils.get_args_raw(message)
         if not args.isdigit():
             await utils.answer(message, self.strings["spec_invalid_number"])
-            await asyncio.sleep(5)
+            await asyncio.sleep(self.config["timer"])
             await message.delete()
             return
         index = int(args) - 1
@@ -184,11 +202,11 @@ class NoteSaver(loader.Module):
             self.notes.pop(index)
             self.db.set(self.strings["name"], "notes", self.notes)
             await utils.answer(message, self.strings["note_deleted"])
-            await asyncio.sleep(5)
+            await asyncio.sleep(self.config["timer"])
             await message.delete()
         else:
             await utils.answer(message, self.strings["invalid_note_number"])
-            await asyncio.sleep(5)
+            await asyncio.sleep(self.config["timer"])
             await message.delete()
 
     @loader.command()
@@ -197,5 +215,5 @@ class NoteSaver(loader.Module):
         self.notes = []
         self.db.set(self.strings["name"], "notes", [])
         await utils.answer(message, self.strings["cleared_all_notes"])
-        await asyncio.sleep(5)
+        await asyncio.sleep(self.config["timer"])
         await message.delete()
