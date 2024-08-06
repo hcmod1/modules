@@ -36,10 +36,10 @@ class NoteSaver(loader.Module):
         "invalid_note_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Неверный номер заметки.</b>",
         "cleared_all_notes": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Все заметки очищены!</b>",
         "please_reply": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Пожалуйста, ответьте на сообщение, чтобы сохранить его как заметку.</b>",
-        "_cmd_doc_sn": "- сохранить заметку. Использование: sn <ответ на сообщение>",
-        "_cmd_doc_ln": "- перечислить все сохраненные заметки",
-        "_cmd_doc_dn": "- удалить заметку. Использование: dn <номер заметки>",
-        "_cmd_doc_cn": "- очистить все сохраненные заметки",
+        "_cmd_doc_nsave": "- сохранить заметку. Использование: nsave <ответ на сообщение>",
+        "_cmd_doc_nlist": "- перечислить все сохраненные заметки",
+        "_cmd_doc_ndelete": "- удалить заметку. Использование: ndelete <номер заметки>",
+        "_cmd_doc_nclear": "- очистить все сохраненные заметки",
         "_cls_doc": "Модуль для сохранения и управления вашими заметками."
     }
 
@@ -52,10 +52,10 @@ class NoteSaver(loader.Module):
         "invalid_note_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Numéro de note invalide.</b>",
         "cleared_all_notes": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Toutes les notes ont été effacées!</b>",
         "please_reply": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Veuillez répondre à un message pour l'enregistrer en tant que note.</b>",
-        "_cmd_doc_sn": "- enregistrer une note. Utilisation: sn <réponse à un message>",
-        "_cmd_doc_ln": "- lister toutes les notes enregistrées",
-        "_cmd_doc_dn": "- supprimer une note. Utilisation: dn <numéro de note>",
-        "_cmd_doc_cn": "- effacer toutes les notes enregistrées",
+        "_cmd_doc_nsave": "- enregistrer une note. Utilisation: nsave <réponse à un message>",
+        "_cmd_doc_nlist": "- lister toutes les notes enregistrées",
+        "_cmd_doc_ndelete": "- supprimer une note. Utilisation: ndelete <numéro de note>",
+        "_cmd_doc_nclear": "- effacer toutes les notes enregistrées",
         "_cls_doc": "Un module pour enregistrer et gérer vos notes efficacement."
     }
 
@@ -68,10 +68,10 @@ class NoteSaver(loader.Module):
         "invalid_note_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Numero di nota non valido.</b>",
         "cleared_all_notes": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Tutte le note sono state cancellate!</b>",
         "please_reply": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Rispondi a un messaggio per salvarlo come nota.</b>",
-        "_cmd_doc_sn": "- salva una nota. Uso: sn <rispondi a un messaggio>",
-        "_cmd_doc_ln": "- elenca tutte le note salvate",
-        "_cmd_doc_dn": "- elimina una nota. Uso: dn <numero di nota>",
-        "_cmd_doc_cn": "- cancella tutte le note salvate",
+        "_cmd_doc_nsave": "- salva una nota. Uso: nsave <rispondi a un messaggio>",
+        "_cmd_doc_nlist": "- elenca tutte le note salvate",
+        "_cmd_doc_ndelete": "- elimina una nota. Uso: ndelete <numero di nota>",
+        "_cmd_doc_nclear": "- cancella tutte le note salvate",
         "_cls_doc": "Un modulo per salvare e gestire le tue note in modo efficiente."
     }
 
@@ -84,10 +84,10 @@ class NoteSaver(loader.Module):
         "invalid_note_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Ungültige Notiznummer.</b>",
         "cleared_all_notes": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Alle Notizen wurden gelöscht!</b>",
         "please_reply": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Bitte antworte auf eine Nachricht, um sie als Notiz zu speichern.</b>",
-        "_cmd_doc_sn": "- speichere eine Notiz. Verwendung: sn <Antwort auf eine Nachricht>",
-        "_cmd_doc_ln": "- alle gespeicherten Notizen auflisten",
-        "_cmd_doc_dn": "- lösche eine Notiz. Verwendung: dn <Notiznummer>",
-        "_cmd_doc_cn": "- alle gespeicherten Notizen löschen",
+        "_cmd_doc_nsave": "- speichere eine Notiz. Verwendung: nsave <Antwort auf eine Nachricht>",
+        "_cmd_doc_nlist": "- alle gespeicherten Notizen auflisten",
+        "_cmd_doc_ndelete": "- lösche eine Notiz. Verwendung: ndelete <Notiznummer>",
+        "_cmd_doc_nclear": "- alle gespeicherten Notizen löschen",
         "_cls_doc": "Ein Modul, um Notizen effizient zu speichern und zu verwalten."
     }
 
@@ -100,10 +100,10 @@ class NoteSaver(loader.Module):
         "invalid_note_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Geçersiz not numarası.</b>",
         "cleared_all_notes": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Tüm notlar temizlendi!</b>",
         "please_reply": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Lütfen bir mesajı not olarak kaydetmek için cevaplayın.</b>",
-        "_cmd_doc_sn": "- bir notu kaydet. Kullanım: sn <mesaja yanıt ver>",
-        "_cmd_doc_ln": "- kaydedilen tüm notları listele",
-        "_cmd_doc_dn": "- bir notu sil. Kullanım: dn <not numarası>",
-        "_cmd_doc_cn": "- tüm kaydedilen notları temizle",
+        "_cmd_doc_nsave": "- bir notu kaydet. Kullanım: nsave <mesaja yanıt ver>",
+        "_cmd_doc_nlist": "- kaydedilen tüm notları listele",
+        "_cmd_doc_ndelete": "- bir notu sil. Kullanım: ndelete <not numarası>",
+        "_cmd_doc_nclear": "- tüm kaydedilen notları temizle",
         "_cls_doc": "Notlarınızı verimli bir şekilde kaydetmek ve yönetmek için bir modül."
     }
     
@@ -116,10 +116,10 @@ class NoteSaver(loader.Module):
         "invalid_note_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Noto'g'ri eslatma raqami.</b>",
         "cleared_all_notes": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Barcha eslatmalar tozalandi!</b>",
         "please_reply": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Iltimos, eslatma sifatida saqlash uchun xabarni javob bering.</b>",
-        "_cmd_doc_sn": "- eslatma saqlash. Foydalanish: sn <xabarga javob bering>",
-        "_cmd_doc_ln": "- saqlangan eslatmalar ro'yxati",
-        "_cmd_doc_dn": "- elslatmani o'chirib tashlash. Foydalanish: dn <eslatma raqami>",
-        "_cmd_doc_cn": "- barcha saqlangan eslatmalarni tozalash",
+        "_cmd_doc_nsave": "- eslatma saqlash. Foydalanish: nsave <xabarga javob bering>",
+        "_cmd_doc_nlist": "- saqlangan eslatmalar ro'yxati",
+        "_cmd_doc_ndelete": "- elslatmani o'chirib tashlash. Foydalanish: ndelete <eslatma raqami>",
+        "_cmd_doc_nclear": "- barcha saqlangan eslatmalarni tozalash",
         "_cls_doc": "Eslatmalarni samarali saqlash va boshqarish uchun modul."
     }
 
@@ -132,10 +132,10 @@ class NoteSaver(loader.Module):
         "invalid_note_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Número de nota inválido.</b>",
         "cleared_all_notes": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Todas las notas han sido eliminadas!</b>",
         "please_reply": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Por favor, responde a un mensaje para guardarlo como nota.</b>",
-        "_cmd_doc_sn": "- guardar una nota. Uso: sn <responder a un mensaje>",
-        "_cmd_doc_ln": "- mostrar todas las notas guardadas",
-        "_cmd_doc_dn": "- eliminar una nota. Uso: dn <número de nota>",
-        "_cmd_doc_cn": "- limpiar todas las notas guardadas",
+        "_cmd_doc_nsave": "- guardar una nota. Uso: nsave <responder a un mensaje>",
+        "_cmd_doc_nlist": "- mostrar todas las notas guardadas",
+        "_cmd_doc_ndelete": "- eliminar una nota. Uso: ndelete <número de nota>",
+        "_cmd_doc_nclear": "- limpiar todas las notas guardadas",
         "_cls_doc": "Un módulo para guardar y gestionar tus notas de manera eficiente."
     }
 
@@ -145,8 +145,8 @@ class NoteSaver(loader.Module):
         self.notes = self.db.get(self.strings["name"], "notes", [])
 
     @loader.command()
-    async def sn(self, message: Message):
-        """- save a note. Usage: sn <reply to a message>"""
+    async def nsave(self, message: Message):
+        """- save a note. Usage: nsave <reply to a message>"""
         reply = await message.get_reply_message()
         if not reply:
             await utils.answer(message, self.strings["please_reply"])
@@ -160,7 +160,7 @@ class NoteSaver(loader.Module):
         await message.delete()
 
     @loader.command()
-    async def ln(self, message: Message):
+    async def nlist(self, message: Message):
         """- list all saved notes"""
         if not self.notes:
             await utils.answer(message, self.strings["no_notes"])
@@ -171,8 +171,8 @@ class NoteSaver(loader.Module):
         await utils.answer(message, self.strings["notes_list"].format(notes))
 
     @loader.command()
-    async def dn(self, message: Message):
-        """- delete a note. Usage: dn <note number>"""
+    async def ndel(self, message: Message):
+        """- delete a note. Usage: ndelete <note number>"""
         args = utils.get_args_raw(message)
         if not args.isdigit():
             await utils.answer(message, self.strings["spec_invalid_number"])
@@ -192,7 +192,7 @@ class NoteSaver(loader.Module):
             await message.delete()
 
     @loader.command()
-    async def cn(self, message: Message):
+    async def nclear(self, message: Message):
         """- clear all saved notes"""
         self.notes = []
         self.db.set(self.strings["name"], "notes", [])
