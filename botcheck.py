@@ -61,6 +61,18 @@ class BotCheck(loader.Module):
         "_cmd_doc_bot": "- utilice este comando para verificar el funcionamiento."
     }
 
+    strings_kk = {
+        "bot_response": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Юзербот жұмыс істеп тұр!</b>",
+        "_cls_doc": "Юзерботтың жұмыс істеп тұрғанын тексеру модулі.",
+        "_cmd_doc_bot": "- жұмыс істеуін тексеру үшін осы команданы қолданыңыз."
+    }
+
+    strings_tt = {
+        "bot_response": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Юзербот эшли!</b>",
+        "_cls_doc": "Юзерботның эшләвен тикшерү модуле.",
+        "_cmd_doc_bot": "- эшләүне тикшерү өчен бу команданы кулланыгыз."
+    }
+
     @loader.command()
     async def bot(self, message: Message):
         """- use this command to check the functionality."""
