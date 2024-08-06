@@ -24,11 +24,7 @@ class NoteSaver(loader.Module):
         "spec_invalid_number": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Please specify the note number to delete.</b>",
         "invalid_note_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Invalid note number.</b>",
         "cleared_all_notes": "<emoji document_id=5206607081334906820>✔️</emoji> <b>All notes cleared!</b>",
-        "please_reply": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Please reply to a message to save it as a note.</b>",
-        "_cmd_doc_sn": "- save a note. Usage: sn <reply to a message>",
-        "_cmd_doc_ln": "- list all saved notes",
-        "_cmd_doc_dn": "- delete a note. Usage: dn <note number>",
-        "_cmd_doc_cn": "- clear all saved notes"
+        "please_reply": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Please reply to a message to save it as a note.</b>"
     }
 
     strings_ru = {
@@ -150,7 +146,7 @@ class NoteSaver(loader.Module):
 
     @loader.command()
     async def sn(self, message: Message):
-        """Save a note. Usage: .savenote <reply to a message>"""
+        """- save a note. Usage: .savenote <reply to a message>"""
         reply = await message.get_reply_message()
         if not reply:
             await utils.answer(message, self.strings["please_reply"])
@@ -165,7 +161,7 @@ class NoteSaver(loader.Module):
 
     @loader.command()
     async def ln(self, message: Message):
-        """List all saved notes"""
+        """- list all saved notes"""
         if not self.notes:
             await utils.answer(message, self.strings["no_notes"])
             await asyncio.sleep(5)
@@ -176,7 +172,7 @@ class NoteSaver(loader.Module):
 
     @loader.command()
     async def dn(self, message: Message):
-        """Delete a note. Usage: .delnote <note number>"""
+        """- delete a note. Usage: .delnote <note number>"""
         args = utils.get_args_raw(message)
         if not args.isdigit():
             await utils.answer(message, self.strings["spec_invalid_number"])
@@ -197,7 +193,7 @@ class NoteSaver(loader.Module):
 
     @loader.command()
     async def cn(self, message: Message):
-        """Clear all saved notes"""
+        """- clear all saved notes"""
         self.notes = []
         self.db.set(self.strings["name"], "notes", [])
         await utils.answer(message, self.strings["cleared_all_notes"])
