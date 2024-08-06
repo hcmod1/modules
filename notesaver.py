@@ -16,6 +16,18 @@ from .. import loader, utils
 class NoteSaver(loader.Module):
     """A module to save and manage your notes efficiently."""
 
+    strings = {
+        "note_saved": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Note saved!</b>",
+        "no_notes": "<emoji document_id=5210952531676504517>❌</emoji> <b>No notes found.</b>",
+        "notes_list": "<emoji document_id=5413879192267805083>🗓</emoji> <b>Saved notes:</b>\n\n{}",
+        "note_deleted": "<emoji document_id=5445267414562389170>🗑</emoji> <b>Note deleted!</b>",
+        "spec_invalid_number": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Please specify the note number to delete.</b>",
+        "invalid_note_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Invalid note number.</b>",
+        "cleared_all_notes": "<emoji document_id=5206607081334906820>✔️</emoji> <b>All notes cleared!</b>",
+        "please_reply": "<emoji document_id=5447644880824181073>⚠️</emoji> <b>Please reply to a message to save it as a note.</b>",
+        "_cfg_doc_timer": "Time in seconds after which the message will be deleted."
+    }
+
     strings_ru = {
         "note_saved": "<emoji document_id=5206607081334906820>✔️</emoji> <b>Заметка сохранена!</b>",
         "no_notes": "<emoji document_id=5210952531676504517>❌</emoji> <b>Заметки не найдены.</b>",
