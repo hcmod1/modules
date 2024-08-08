@@ -1,5 +1,3 @@
-__version__ = (1, 0, 0)
-
 # 🔒 Licensed under the GNU AGPLv3
 # 🌐 https://www.gnu.org/licenses/agpl-3.0.html
 
