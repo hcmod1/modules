@@ -12,15 +12,14 @@ from .. import loader, utils
 
 @loader.tds
 class AutoReplyMod(loader.Module):
-    """Auto-reply module: You can customize the configuration."""
+    """Module for auto-replies in private messages and groups."""
     strings = {
         "name": "AutoReplyMod",
         "_cfg_doc_replies": "Dictionary of replies",
         "_cfg_doc_delay": "Delay in seconds before replying",
         "_cfg_doc_reply_mode": "If set to true, will reply to messages; if set to false, it will not.",
         "_cfg_doc_private": "If set to true, will work in private messages; if set to false, it will not.",
-        "_cfg_doc_group": "If set to true, will work in groups; if set to false, it will not.",
-        "_cls_doc": "Auto-reply module: You can customize the configuration."
+        "_cfg_doc_group": "If set to true, will work in groups; if set to false, it will not."
     }
 
     strings_ru = {
@@ -29,7 +28,8 @@ class AutoReplyMod(loader.Module):
         "_cfg_doc_reply_mode": "Если значение true, будет отвечать на сообщения, если false — не будет.",
         "_cfg_doc_private": "Если значение true, будет работать в личных сообщениях, если false — не будет.",
         "_cfg_doc_group": "Если значение true, будет работать в группах, если false — не будет.",
-        "_cls_doc": "Модуль авто-ответчик: Вы можете настроить конфигурацию."
+        "_cls_doc": "Модуль для автоответов в личных сообщениях и группах.",
+        "_cmd_doc_armcfg": "- открыть конфигурацию"
     }
 
     strings_fr = {
@@ -38,7 +38,8 @@ class AutoReplyMod(loader.Module):
         "_cfg_doc_reply_mode": "Si la valeur est true, répondra aux messages ; si la valeur est false, ne répondra pas.",
         "_cfg_doc_private": "Si la valeur est true, fonctionnera dans les messages privés ; si la valeur est false, ne fonctionnera pas.",
         "_cfg_doc_group": "Si la valeur est true, fonctionnera dans les groupes ; si la valeur est false, ne fonctionnera pas.",
-        "_cls_doc": "Module de réponse automatique : Vous pouvez personnaliser la configuration."
+        "_cls_doc": "Module pour les réponses automatiques dans les messages privés et les groupes.",
+        "_cmd_doc_armcfg": "- ouvrir la configuration"
     }
 
     strings_it = {
@@ -47,7 +48,8 @@ class AutoReplyMod(loader.Module):
         "_cfg_doc_reply_mode": "Se impostato su true, risponderà ai messaggi; se impostato su false, non risponderà.",
         "_cfg_doc_private": "Se impostato su true, funzionerà nei messaggi privati; se impostato su false, non funzionerà.",
         "_cfg_doc_group": "Se impostato su true, funzionerà nei gruppi; se impostato su false, non funzionerà.",
-        "_cls_doc": "Modulo di risposta automatica: È possibile personalizzare la configurazione."
+        "_cls_doc": "Modulo per risposte automatiche nei messaggi privati e nei gruppi.",
+        "_cmd_doc_armcfg": "- aprire la configurazione"
     }
 
     strings_de = {
@@ -56,7 +58,8 @@ class AutoReplyMod(loader.Module):
         "_cfg_doc_reply_mode": "Wenn auf true gesetzt, wird auf Nachrichten geantwortet; wenn auf false gesetzt, nicht.",
         "_cfg_doc_private": "Wenn auf true gesetzt, funktionieren in privaten Nachrichten; wenn auf false gesetzt, nicht.",
         "_cfg_doc_group": "Wenn auf true gesetzt, funktionieren in Gruppen; wenn auf false gesetzt, nicht.",
-        "_cls_doc": "Modul zur automatischen Antwort: Sie können die Konfiguration anpassen."
+        "_cls_doc": "Modul für automatische Antworten in privaten Nachrichten und Gruppen.",
+        "_cmd_doc_armcfg": "- Konfiguration öffnen"
     }
 
     strings_tr = {
@@ -65,7 +68,8 @@ class AutoReplyMod(loader.Module):
         "_cfg_doc_reply_mode": "True olarak ayarlandığında, mesajlara yanıt verir; false olarak ayarlandığında, yanıt vermez.",
         "_cfg_doc_private": "True olarak ayarlandığında, özel mesajlarda çalışacak; false olarak ayarlandığında, çalışmayacak.",
         "_cfg_doc_group": "True olarak ayarlandığında, gruplarda çalışacak; false olarak ayarlandığında, çalışmayacak.",
-        "_cls_doc": "Otomatik yanıt modülü: Yapılandırmayı özelleştirebilirsiniz."
+        "_cls_doc": "Özel mesajlarda ve gruplarda otomatik yanıtlar için modül.",
+        "_cmd_doc_armcfg": "- yapılandırmayı aç"
     }
 
     strings_uz = {
@@ -74,7 +78,8 @@ class AutoReplyMod(loader.Module):
         "_cfg_doc_reply_mode": "Agar true qilib sozlansa, xabarlarga javob beradi; agar false qilib sozlansa, javob bermaydi.",
         "_cfg_doc_private": "Agar true qilib sozlansa, shaxsiy xabarlarda ishlaydi; agar false qilib sozlansa, ishlamaydi.",
         "_cfg_doc_group": "Agar true qilib sozlansa, guruhlarda ishlaydi; agar false qilib sozlansa, ishlamaydi.",
-        "_cls_doc": "Avto-javob moduli: Siz sozlamalarni moslashtirishingiz mumkin."
+        "_cls_doc": "Shaxsiy xabarlar va guruhlarda avtomatik javoblar uchun modul.",
+        "_cmd_doc_armcfg": "- konfiguratsiyani ochish"
     }
 
     strings_es = {
@@ -83,7 +88,8 @@ class AutoReplyMod(loader.Module):
         "_cfg_doc_reply_mode": "Si se establece en true, responderá a los mensajes; si se establece en false, no responderá.",
         "_cfg_doc_private": "Si se establece en true, funcionará en mensajes privados; si se establece en false, no funcionará.",
         "_cfg_doc_group": "Si se establece en true, funcionará en grupos; si se establece en false, no funcionará.",
-        "_cls_doc": "Módulo de respuesta automática: Puede personalizar la configuración."
+        "_cls_doc": "Módulo para respuestas automáticas en mensajes privados y grupos.",
+        "_cmd_doc_armcfg": "- abrir configuración"
     }
 
     strings_kk = {
@@ -92,7 +98,8 @@ class AutoReplyMod(loader.Module):
         "_cfg_doc_reply_mode": "Егер мәні true болса, хабарламаларға жауап береді, егер false болса — жауап бермейді.",
         "_cfg_doc_private": "Егер мәні true болса, жеке хабарламаларда жұмыс істейді, егер false болса — жұмыс істемейді.",
         "_cfg_doc_group": "Егер мәні true болса, топтарда жұмыс істейді, егер false болса — жұмыс істемейді.",
-        "_cls_doc": "Авто-жауап модулі: Сіз конфигурацияны баптай аласыз."
+        "_cls_doc": "Жекеше хабарламалар мен топтарда автоматты жауаптар модулі.",
+        "_cmd_doc_armcfg": "- конфигурацияны ашу"
     }
 
     strings_tt = {
@@ -101,7 +108,8 @@ class AutoReplyMod(loader.Module):
         "_cfg_doc_reply_mode": "Әгәр дә кыйммәт true булса, хәбәрләргә җавап бирәчәк, әгәр false булса — җавап бирмәячәк.",
         "_cfg_doc_private": "Әгәр дә кыйммәт true булса, шәхси хәбәрләрдә эшләячәк, әгәр false булса — эшләмәячәк.",
         "_cfg_doc_group": "Әгәр дә кыйммәт true булса, төркемнәрдә эшләячәк, әгәр false булса — эшләмәячәк.",
-        "_cls_doc": "Авто-җавап модуле: Сез конфигурацияне көйли аласыз."
+        "_cls_doc": "Шәхси хәбәрләр һәм төркемнәрдә автоматик җаваплар өчен модуль.",
+        "_cmd_doc_armcfg": "- конфигурацияне ачу"
     }
 
     async def client_ready(self, client, db):
@@ -139,6 +147,12 @@ class AutoReplyMod(loader.Module):
                 validator=loader.validators.Boolean()
             )
         )
+
+    @loader.command()
+    async def armcfg(self, message):
+        """- open configuration"""
+        await self.invoke("config", "AutoReplyMod", message.peer_id)
+        await message.delete()
 
     @loader.unrestricted
     async def watcher(self, message):
