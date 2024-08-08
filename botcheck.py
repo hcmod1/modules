@@ -85,7 +85,7 @@ class BotCheck(loader.Module):
     async def client_ready(self, client, db):
         self.client = client
 
-    def init(self):
+    def __init__(self):
         self.config = loader.ModuleConfig(
             loader.ConfigValue(
                 "emoji",
@@ -96,7 +96,7 @@ class BotCheck(loader.Module):
 
     @loader.command()
     async def bot(self, message: Message):
-        """- use this command to check the functionality."""
+        """- используйте эту команду для проверки работоспособности."""
         uptime = utils.formatted_uptime()
         emoji = self.config["emoji"]
         response = self.strings["bot_response"].format(emoji=emoji, uptime=uptime)
