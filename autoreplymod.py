@@ -117,7 +117,7 @@ class AutoReplyMod(loader.Module):
         self.config = loader.ModuleConfig(
             loader.ConfigValue(
                 "replies",
-                {"hello": "Hello", "привет": "Привет", "bonjour": "Bonjour", "ciao": "Ciao", "hallo": "Hallo", "merhaba": "Merhaba", "salom": "Salom", "hola": "Hola"},
+                {"hello": "Hello", "привет": "Привет", "bonjour": "Bonjour", "ciao": "Ciao", "hallo": "Hallo", "merhaba": "Merhaba", "salom": "Salom", "hola": "Hola", "сәлем": "Сәлем", "кайырлы көн": "Кайырлы көн"},
                 doc=lambda: self.strings["_cfg_doc_replies"]
             ),
             loader.ConfigValue(
