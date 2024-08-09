@@ -96,7 +96,7 @@ class BotCheck(loader.Module):
 
     @loader.command()
     async def bot(self, message: Message):
-        """- используйте эту команду для проверки работоспособности."""
+        """- use this command to check functionality."""
         uptime = utils.formatted_uptime()
         emoji = self.config["emoji"]
         response = self.strings["bot_response"].format(emoji=emoji, uptime=uptime)
