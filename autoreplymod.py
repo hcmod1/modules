@@ -305,7 +305,7 @@ class AutoReplyMod(loader.Module):
             await message.delete()
             return
 
-        reply_str = "\n".join([f"<b>{i + 1}.</b> <code>{k}</code>\n— <code>{v}</code>" for i, (k, v) in enumerate(self.replies.items())])
+        reply_str = "\n".join([f"\n\n<b>{i + 1}.</b> <code>{k}</code>\n— <code>{v}</code>" for i, (k, v) in enumerate(self.replies.items())])
         await message.edit(self.strings["current_list"].format(reply_str=reply_str))
 
     @loader.command()
