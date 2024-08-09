@@ -1,4 +1,5 @@
 <img src="https://tikolu.net/i/cikcl" width="100%">
 
-# Available: 3 module
-# *[Join us](https://t.me/hcmod)*
+## Welcome! Here you'll find a curated collection of simple and functional modules for Hikka.
+
+# *[Telegram channel](https://t.me/hcmod)*
