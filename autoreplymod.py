@@ -1,3 +1,10 @@
+# 🔒 Licensed under the GNU AGPLv3
+# 🌐 https://www.gnu.org/licenses/agpl-3.0.html
+
+# meta developer: @hcmod
+# scope: hikka_only
+# scope: hikka_min 1.2.10
+
 import asyncio
 from .. import loader, utils
 
@@ -39,7 +46,7 @@ class AutoReplyMod(loader.Module):
         "invalid_question_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Неправильный номер вопроса.</b>",
         "question_removed": "<emoji document_id=5445267414562389170>🗑</emoji> <b>Вопрос номер</b> <code>{index_removed}</code> <b>удалён.</b>",
         "dictionary_empty": "<emoji document_id=5210952531676504517>❌</emoji> <b>Словарь ответов пуст.</b>",
-        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Текущий список:</b>n{reply_str}"
+        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Текущий список:</b>\n\n{reply_str}"
     }
 
     strings_fr = {
@@ -60,7 +67,7 @@ class AutoReplyMod(loader.Module):
         "invalid_question_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Numéro de question invalide.</b>",
         "question_removed": "<emoji document_id=5445267414562389170>🗑</emoji> <b>Question numéro</b> <code>{index_removed}</code> <b>supprimée.</b>",
         "dictionary_empty": "<emoji document_id=5210952531676504517>❌</emoji> <b>Le dictionnaire de réponses est vide.</b>",
-        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Liste actuelle :</b>\n{reply_str}"
+        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Liste actuelle :</b>\n\n{reply_str}"
     }
 
     strings_it = {
@@ -81,7 +88,7 @@ class AutoReplyMod(loader.Module):
         "invalid_question_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Numero di domanda non valido.</b>",
         "question_removed": "<emoji document_id=5445267414562389170>🗑</emoji> <b>Domanda numero</b> <code>{index_removed}</code> <b>rimossa.</b>",
         "dictionary_empty": "<emoji document_id=5210952531676504517>❌</emoji> <b>Il dizionario delle risposte è vuoto.</b>",
-        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Elenco corrente:</b>\n{reply_str}"
+        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Elenco corrente:</b>\n\n{reply_str}"
     }
 
     strings_de = {
@@ -102,7 +109,7 @@ class AutoReplyMod(loader.Module):
         "invalid_question_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Ungültige Frage Nummer.</b>",
         "question_removed": "<emoji document_id=5445267414562389170>🗑</emoji> <b>Frage Nummer</b> <code>{index_removed}</code> <b>entfernt.</b>",
         "dictionary_empty": "<emoji document_id=5210952531676504517>❌</emoji> <b>Das Antwortwörterbuch ist leer.</b>",
-        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Aktuelle Liste:</b>\n{reply_str}"
+        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Aktuelle Liste:</b>\n\n{reply_str}"
     }
     
     strings_tr = {
@@ -123,7 +130,7 @@ class AutoReplyMod(loader.Module):
         "invalid_question_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Geçersiz soru numarası.</b>",
         "question_removed": "<emoji document_id=5445267414562389170>🗑</emoji> <b>Soru numarası</b> <code>{index_removed}</code> <b>silindi.</b>",
         "dictionary_empty": "<emoji document_id=5210952531676504517>❌</emoji> <b>Cevap sözlüğü boş.</b>",
-        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Geçerli liste:</b>\n{reply_str}"
+        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Geçerli liste:</b>\n\n{reply_str}"
     }
     
     strings_uz = {
@@ -144,7 +151,7 @@ class AutoReplyMod(loader.Module):
         "invalid_question_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Yaroqsiz savol raqami.</b>",
         "question_removed": "<emoji document_id=5445267414562389170>🗑</emoji> <b>Savol raqami</b> <code>{index_removed}</code> <b>o'chirildi.</b>",
         "dictionary_empty": "<emoji document_id=5210952531676504517>❌</emoji> <b>Javob lug'ati bo'sh.</b>",
-        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Joriy ro'yxat:</b>\n{reply_str}"
+        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Joriy ro'yxat:</b>\n\n{reply_str}"
     }
 
     strings_es = {
@@ -165,7 +172,7 @@ class AutoReplyMod(loader.Module):
         "invalid_question_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Número de pregunta inválido.</b>",
         "question_removed": "<emoji document_id=5445267414562389170>🗑</emoji> <b>Pregunta número</b> <code>{index_removed}</code> <b>eliminada.</b>",
         "dictionary_empty": "<emoji document_id=5210952531676504517>❌</emoji> <b>El diccionario de respuestas está vacío.</b>",
-        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Lista actual:</b>\n{reply_str}"
+        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Lista actual:</b>\n\n{reply_str}"
     }
 
     strings_kk = {
@@ -186,7 +193,7 @@ class AutoReplyMod(loader.Module):
         "invalid_question_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Қате сұрақ нөмірі.</b>",
         "question_removed": "<emoji document_id=5445267414562389170>🗑</emoji> <b>Нөмірмен сұрақ</b> <code>{index_removed}</code> <b>жойылды.</b>",
         "dictionary_empty": "<emoji document_id=5210952531676504517>❌</emoji> <b>Жауап сөздігі бос.</b>",
-        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Ағымдағы тізім:</b>\n{reply_str}"
+        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Ағымдағы тізім:</b>\n\n{reply_str}"
     }
 
     strings_tt = {
@@ -207,7 +214,7 @@ class AutoReplyMod(loader.Module):
         "invalid_question_number": "<emoji document_id=5210952531676504517>❌</emoji> <b>Ярлы сорау номеры.</b>",
         "question_removed": "<emoji document_id=5445267414562389170>🗑</emoji> <b>Сорау номеры</b> <code>{index_removed}</code> <b>бетерелде.</b>",
         "dictionary_empty": "<emoji document_id=5210952531676504517>❌</emoji> <b>Җавап сүзлек буш.</b>",
-        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Хәзерге исемлек:</b>\n{reply_str}"
+        "current_list": "<emoji document_id=5334544901428229844>ℹ️</emoji> <b>Хәзерге исемлек:</b>\n\n{reply_str}"
     }
 
     async def client_ready(self, client, db):
@@ -305,7 +312,7 @@ class AutoReplyMod(loader.Module):
             await message.delete()
             return
 
-        reply_str = "\n".join([f"\n<b>{i + 1}.</b> <code>{k}</code>\n— <code>{v}</code>" for i, (k, v) in enumerate(self.replies.items())])
+        reply_str = "\n".join([f"<b>{i + 1}.</b> <code>{k}</code>\n— <code>{v}</code>\n" for i, (k, v) in enumerate(self.replies.items())])
         await message.edit(self.strings["current_list"].format(reply_str=reply_str))
 
     @loader.command()
