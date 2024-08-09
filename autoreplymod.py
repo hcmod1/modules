@@ -323,6 +323,9 @@ class AutoReplyMod(loader.Module):
 
     @loader.unrestricted
     async def watcher(self, message):
+    	if not hasattr(message, "sender_id"):
+            return    	
+    
         if (message.is_private and self.config["private"]) or (message.is_group and self.config["group"]):
             sender = await self.client.get_entity(message.sender_id)
             if hasattr(sender, 'bot') and (sender.bot or message.sender_id == (await self.client.get_me()).id):
